@@ -13,6 +13,7 @@ Uma API RESTful para gerenciamento de tickets, construída com **Java 17**, **Sp
 - Maven
 - REST API
 - DTOs
+- Swagger
 
 ---
 
@@ -84,6 +85,7 @@ mvn spring-boot:run
 ```
 ## 📦 Funcionalidades
 
+- Documentação com *Swagger*
 - Cadastro de ticket
 - Listar todos os tickets
 - Buscar ticket
@@ -109,6 +111,8 @@ Você pode testar os endpoints com ferramentas como:
 - Postman
 
 - Insomnia
+
+- [Swagger](http://localhost:8080/swagger-ui/index.html#/)
 
   ## O Projeto possuí interface
    
