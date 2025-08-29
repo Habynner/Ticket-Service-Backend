@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ticket.dtos.TicketRequestDTO;
 import com.ticket.model.Status;
 import com.ticket.model.Ticket;
 import com.ticket.repository.TicketRepository;
@@ -16,7 +17,10 @@ public class TicketService {
     @Autowired
     private TicketRepository repository;
 
-    public Ticket criar(Ticket ticket) {
+    public Ticket criar(TicketRequestDTO dto) {
+        Ticket ticket = new Ticket();
+        ticket.setTitle(dto.getTitle());
+        ticket.setDescription(dto.getDescription());
         ticket.setStatus(Status.OPEN); // status inicial
         return repository.save(ticket);
     }

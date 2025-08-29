@@ -5,12 +5,18 @@ import java.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
+
+@Schema(description = "Dados para criação de um ticket")
 @Document(collection = "tickets")
 public class Ticket {
 
     @Id
     private String id;
+    @Schema(description = "Título do ticket", example = "Erro no login")
     private String title;
+    @Schema(description = "Descrição detalhada", example = "Usuário não consegue acessar o sistema")
     private String description;
     private Status status;
     private LocalDateTime createdAt;
